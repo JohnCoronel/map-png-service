@@ -30,6 +30,7 @@ app.get('/:id', (req,res) => {
                 res.sendStatus(400);
             };
             console.log(`File uploaded at ${data.Location}`)
+            res.sendStatus(200);
         })
     )   
 })
