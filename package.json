@@ -2,5 +2,11 @@
   "name": "img-service",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.382.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "puppeteer": "^1.11.0"
+  }
 }
