@@ -15,10 +15,11 @@ const s3 = new aws.S3();
 
 const express = require('express');
 const app = express()
-const port  = 3000
+const port  =  process.env.PORT || 3000
 
 app.get('/:id', (req,res) => {
     let filepath = `${req.params.id}` + '.png';
+    console.log('get /:id called')
     png(req.params.id).then(
         s3.upload({
             Bucket:'map-png-backwoods',
@@ -38,6 +39,7 @@ app.get('/:id', (req,res) => {
 app.listen(port, () => console.log(`Running on port ${port}`))
 
 async function png(tripId) {
+    console.log('png called')
     const browser = await puppeteer.launch({
         'args':[
             '--no-sandbox',
