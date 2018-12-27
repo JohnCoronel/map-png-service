@@ -24,7 +24,8 @@ app.get('/:id', (req,res) => {
         s3.upload({
             Bucket:'map-png-backwoods',
             Body: fs.createReadStream(filepath),
-            Key: `${req.params.id}.png`
+            Key: `${req.params.id}.png`,
+            ContentType:'image/png'
         }, function (err,data) {
             if (err) {
                 console.log(err);
