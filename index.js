@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 require('dotenv').config()
 const aws = require('aws-sdk');
 const fs = require('fs');
-const path = require('path');
+
 
 
 aws.config.update({
@@ -31,7 +31,7 @@ app.get('/:id', (req,res) => {
                 console.log(err);
                 res.sendStatus(400);
             };
-            console.log(`File uploaded at ${data.Location}`)
+            nsole.log(`File uploaded at ${data.Location}`)
             res.sendStatus(200);
         })
     }).then(() => {
