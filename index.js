@@ -20,7 +20,7 @@ const port  =  process.env.PORT || 3000
 app.get('/:id', (req,res) => {
     let filepath = `${req.params.id}` + '.png';
     console.log('get /:id called')
-    png(req.params.id).then( () => {
+    png(req.params.id).then(() => {
         s3.upload({
             Bucket:'map-png-backwoods',
             Body: fs.createReadStream(filepath),
@@ -37,7 +37,7 @@ app.get('/:id', (req,res) => {
         fs.unlink(filepath, (err) => {
             if (err) console.log(err);
         })
-    })  
+    }).catch(res.status(400).send('Failed at request'))
 })
 
 app.listen(port, () => console.log(`Running on port ${port}`))
