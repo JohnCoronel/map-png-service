@@ -37,7 +37,7 @@ app.get('/:id', (req,res) => {
         fs.unlink(filepath, (err) => {
             if (err) console.log(err);
         })
-    }).catch(res.status(400).send('Failed at request'))
+    }).catch(err => console.log(err))
 })
 
 app.listen(port, () => console.log(`Running on port ${port}`))
