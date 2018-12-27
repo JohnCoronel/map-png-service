@@ -31,7 +31,7 @@ app.get('/:id', (req,res) => {
                 console.log(err);
                 res.sendStatus(400);
             };
-            nsole.log(`File uploaded at ${data.Location}`)
+            console.log(`File uploaded at ${data.Location}`)
             res.sendStatus(200);
         })
     }).then(() => {
