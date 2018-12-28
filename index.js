@@ -17,7 +17,7 @@ const express = require('express');
 const app = express()
 const port  =  process.env.PORT || 3000
 
-app.get('/:id', (req,res) => {
+app.get('/trip/:id', (req,res) => {
     let filepath = `${req.params.id}` + '.png';
     console.log('get /:id called')
     png(req.params.id).then(() => {
