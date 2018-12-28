@@ -1,10 +1,10 @@
-Service to make dynamic images of maps with current state of waypoints and route.
+Service to make dynamic images of trips with map state
 
-This services recreates the trip state at https://mappng.netlify.com/:tripid
-Pupeteer will then screenshot recreated image and store in S3 and the reference back in DB
+This services recreates the trip state at https://mappng.netlify.com/trip/:id
+Pupeteer will then screenshot recreated image on remote service and store in S3 bucket at https://map-png-backwoods.s3.amazonaws.com/ 
 
-running instance is deployed at map-png.herokuapp.com/
-
-s3 bucket is https://map-png-backwoods.s3.amazonaws.com/
+running instance is deployed at map-png.herokuapp.com
+Call the service by sending GET to map-png.herokuapp.com/trip/:id
+Retrieve generated image with https://map-png-backwoods.s3.amazonaws.com/:tripid 
 
  
